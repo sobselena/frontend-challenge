@@ -1,11 +1,17 @@
-import { NavLink } from 'react-router';
-import { Paths } from '../../constants';
+import { BASE_HEADER_LINKS } from '../../constants';
+import styles from './header.module.scss';
+import { AppNavLink } from '../app-nav-link/app-nav-link';
 
 export const Header = () => (
-  <header>
-    <nav>
-      <NavLink to={Paths.MAIN}>Все котики</NavLink>
-      <NavLink to={Paths.FAVORITE}>Любимые котики</NavLink>
+  <header className={styles.header}>
+    <nav className={styles.nav}>
+      <ul className={styles.list}>
+        {BASE_HEADER_LINKS.map(({ link, text, key }) => (
+          <li key={key} className={styles.item}>
+            <AppNavLink link={link}>{text}</AppNavLink>
+          </li>
+        ))}
+      </ul>
     </nav>
   </header>
 );
