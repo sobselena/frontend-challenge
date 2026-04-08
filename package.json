@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "lint:styles": "stylelint \"src/**/*.{css,scss}\" --fix",
+    "lint:style": "stylelint \"src/**/*.{css,scss}\" --fix",
     "format:fix": "prettier --write .",
     "preview": "vite preview",
     "prepare": "husky",
@@ -33,14 +33,10 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
-    "@mantine/core": "^9.0.0",
-    "@mantine/form": "^9.0.0",
-    "@mantine/hooks": "^9.0.0",
-    "@mantine/notifications": "^9.0.0",
     "@reduxjs/toolkit": "^2.11.2",
-    "@tabler/icons-react": "^3.41.1",
     "classnames": "^2.5.1",
     "jsdom": "^28.1.0",
+    "rc-slider": "^11.1.9",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-hook-form": "^7.71.2",
@@ -49,6 +45,7 @@
     "react-redux": "^9.2.0",
     "react-router": "^7.13.1",
     "react-router-dom": "^7.13.1",
+    "react-spinners": "^0.17.0",
     "zod": "^4.3.6"
   },
   "devDependencies": {
