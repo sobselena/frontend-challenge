@@ -1,12 +1,30 @@
 .header {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
   height: 6.4rem;
+  padding: 0 5rem;
+
+  background-color: var(--color-bg);
+  box-shadow: var(--shadow-header);
 }
 
 .nav {
-  margin: 0 auto;
-  padding: 0 6.2rem;
+  height: 100%;
 }
 
-.link {
+.list {
+  display: flex;
+
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.item {
+  display: flex;
   height: 100%;
 }
