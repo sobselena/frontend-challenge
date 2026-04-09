@@ -16,41 +16,51 @@ html {
   font-family: Roboto;
   font-weight: 300;
   font-style: normal;
+
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   src: url('../assets/fonts/roboto-v51-cyrillic_latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 /* roboto-regular - cyrillic_latin */
 @font-face {
   font-family: Roboto;
   font-weight: 400;
   font-style: normal;
+
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   src: url('../assets/fonts/roboto-v51-cyrillic_latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 /* roboto-500 - cyrillic_latin */
 @font-face {
   font-family: Roboto;
   font-weight: 500;
   font-style: normal;
+
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   src: url('../assets/fonts/roboto-v51-cyrillic_latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 /* roboto-600 - cyrillic_latin */
 @font-face {
   font-family: Roboto;
   font-weight: 600;
   font-style: normal;
+
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   src: url('../assets/fonts/roboto-v51-cyrillic_latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 /* roboto-700 - cyrillic_latin */
 @font-face {
   font-family: Roboto;
   font-weight: 700;
   font-style: normal;
+
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   src: url('../assets/fonts/roboto-v51-cyrillic_latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 body {
   font-family: Roboto, sans-serif;
   font-size: 1.6rem;
@@ -59,11 +69,19 @@ body {
 }
 
 :root {
-  --color-bg: #2196f3;
-  --color-bg-dark: #1e88e5;
-  --color-text-white: #fff;
+  --bg-primary: #2196f3;
+  --bg-primary-dark: #1e88e5;
+  --text-white: #fff;
+  --text-muted: #4b4b4b;
+  --text-error: #c3372d;
+  --text-black: #000;
+  --text-inactive: rgb(255 255 255 / 0.7);
+  --heart-default: #f24e1e;
+  --heart-active: #ff3a00;
   --shadow-header: 0 0.4rem 0.4rem rgb(0 0 0 / 0.24);
-  --transition-default: 0.3s ease;
+  --shadow-card-primary: 0 0.9rem 1.8rem #0000002e;
+  --shadow-card-secondary: 0 0.6rem 0.5rem #0000003d;
+  --font-sm: 1.4rem;
+  --line-sm: 2.1rem;
+  --transition: 0.2s ease;
 }
-
-/*# sourceMappingURL=index.css.map */

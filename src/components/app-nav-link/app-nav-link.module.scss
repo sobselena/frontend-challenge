@@ -3,25 +3,33 @@
   align-items: center;
   justify-content: center;
 
-  height: 100%;
   padding: 0 2rem;
 
-  font-size: 1.4rem;
-  color: var(--color-text-white);
+  font-size: var(--font-sm);
+  line-height: var(--line-sm);
+  color: var(--text-inactive);
   text-decoration: none;
 
-  opacity: 0.7;
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
 
-  transition: all var(--transition-default);
-
-  &:hover {
-    opacity: 1;
-    background-color: rgb(0 0 0 / 0.1);
-  }
+.link:hover {
+  color: var(--text-white);
+  background: rgb(255 255 255 / 0.08);
 }
 
 .active {
-  cursor: default;
-  opacity: 1;
-  background-color: var(--color-bg-dark);
+  color: var(--text-white);
+  background: var(--bg-primary-dark);
+}
+
+@media (width <= 860px) {
+  .link {
+    width: 100%;
+    padding: 0 1rem;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+  }
 }
