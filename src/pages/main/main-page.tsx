@@ -1,6 +1,8 @@
 import { useState, useRef, useCallback } from 'react';
 import { useGetCatsImagesQuery } from '../../redux/api';
-import { Card } from './components/card';
+
+import { Card } from '../main/components/card';
+import { CardsLayout } from '../../app/layouts/cards-layout';
 import styles from './main-page.module.scss';
 
 export const MainPage = () => {
@@ -12,7 +14,7 @@ export const MainPage = () => {
 
   const lastElementRef = useCallback(
     (node: HTMLDivElement | null) => {
-      if (isFetching) return;
+      if (isFetching || isError) return;
 
       if (observer.current) observer.current.disconnect();
 
@@ -24,28 +26,34 @@ export const MainPage = () => {
 
       if (node) observer.current.observe(node);
     },
-    [isFetching]
+    [isFetching, isError]
   );
 
+  const isEmpty = !isFetching && data.length === 0;
+
   return (
-    <section className={styles.container}>
+    <>
       {isError && <p className={styles.statusError}>Ошибка при загрузке котиков :(</p>}
 
-      <div className={styles.grid}>
+      <CardsLayout isEmpty={isEmpty} emptyText="Котиков пока нет 🐱">
         {data.map((cat, index) => {
-          if (index === data.length - 1) {
+          const isLast = index === data.length - 1;
+
+          const card = <Card key={cat.id} url={cat.url} id={cat.id} />;
+
+          if (isLast) {
             return (
               <div ref={lastElementRef} key={cat.id}>
-                <Card url={cat.url} />
+                {card}
               </div>
             );
           }
 
-          return <Card key={cat.id} url={cat.url} />;
+          return card;
         })}
-      </div>
+      </CardsLayout>
 
       {isFetching && <p className={styles.loader}>... загружаем еще котиков ...</p>}
-    </section>
+    </>
   );
 };

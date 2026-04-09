@@ -2,20 +2,29 @@ import { useState } from 'react';
 import classNames from 'classnames';
 
 import styles from './card.module.scss';
+import { useDispatch } from 'react-redux';
+import { toggleFavorite } from '../../../../redux/reducers';
 
 type Props = {
   url: string;
+  id: string;
 };
-export const Card = ({ url }: Props) => {
-  const [isLiked, setIsLiked] = useState(false);
 
+export const Card = ({ url, id }: Props) => {
+  const [isLiked, setIsLiked] = useState(false);
+  const dispatch = useDispatch();
+
+  function handleLike() {
+    setIsLiked((prev) => !prev);
+    dispatch(toggleFavorite({ id, url }));
+  }
   return (
     <div className={styles.card}>
       <img src={url} alt="Котик" className={styles.image} />
       <button
         type="button"
         className={classNames(styles.heart, { [styles.liked]: isLiked })}
-        onClick={() => setIsLiked(!isLiked)}
+        onClick={handleLike}
         aria-label="Like"
       >
         <svg viewBox="0 0 24 24">
