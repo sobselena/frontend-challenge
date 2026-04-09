@@ -23,5 +23,10 @@ export type Breed = {
 
 export type CatsFilters = Partial<{
   limit: number;
+  page: number;
+  order: 'ASC' | 'DESC' | 'RAND';
+  has_breeds: 0 | 1;
   breed_ids: string;
+  category_ids: string;
+  sub_id: string;
 }>;

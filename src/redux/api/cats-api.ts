@@ -8,11 +8,27 @@ export const catsApi = createApi({
     baseUrl: 'https://api.thecatapi.com/v1/images/search',
   }),
   endpoints: (build) => ({
-    getCatsImages: build.query<CatImageResponse[], CatsFilters | void>({
-      query: (filters: CatsFilters = {}) => ({
-        url: ``,
+    getCatsImages: build.query<CatImageResponse[], CatsFilters>({
+      query: (filters = {}) => ({
+        url: '',
         params: normalizeFilters(filters),
       }),
+
+      serializeQueryArgs: ({ endpointName }) => endpointName,
+
+      merge: (currentCache, newItems) => {
+        const ids = new Set(currentCache.map((c) => c.id));
+
+        for (const item of newItems) {
+          if (!ids.has(item.id)) {
+            currentCache.push(item);
+          }
+        }
+      },
+
+      forceRefetch({ currentArg, previousArg }) {
+        return currentArg?.page !== previousArg?.page;
+      },
     }),
   }),
 });

@@ -3,7 +3,10 @@ import classNames from 'classnames';
 
 import styles from './card.module.scss';
 
-export const Card = ({ url }: { url: string }) => {
+type Props = {
+  url: string;
+};
+export const Card = ({ url }: Props) => {
   const [isLiked, setIsLiked] = useState(false);
 
   return (
