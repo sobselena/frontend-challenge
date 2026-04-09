@@ -29,13 +29,11 @@ export const MainPage = () => {
     [isFetching, isError]
   );
 
-  const isEmpty = !isFetching && data.length === 0;
-
   return (
     <>
       {isError && <p className={styles.statusError}>Ошибка при загрузке котиков :(</p>}
 
-      <CardsLayout isEmpty={isEmpty} emptyText="Котиков пока нет 🐱">
+      <CardsLayout>
         {data.map((cat, index) => {
           const isLast = index === data.length - 1;
 

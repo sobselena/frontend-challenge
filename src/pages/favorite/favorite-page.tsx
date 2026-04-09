@@ -8,7 +8,7 @@ export const FavoritePage = () => {
   return (
     <CardsLayout isEmpty={favorites.length === 0} emptyText="Нет любимых котиков :(">
       {favorites.map((cat) => (
-        <Card key={cat.id} url={cat.url} id={cat.id} />
+        <Card key={cat.id} url={cat.url} id={cat.id} isFavorite={true} />
       ))}
     </CardsLayout>
   );

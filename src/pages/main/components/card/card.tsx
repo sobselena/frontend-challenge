@@ -8,10 +8,11 @@ import { toggleFavorite } from '../../../../redux/reducers';
 type Props = {
   url: string;
   id: string;
+  isFavorite?: boolean;
 };
 
-export const Card = ({ url, id }: Props) => {
-  const [isLiked, setIsLiked] = useState(false);
+export const Card = ({ url, id, isFavorite = false }: Props) => {
+  const [isLiked, setIsLiked] = useState(isFavorite);
   const dispatch = useDispatch();
 
   function handleLike() {

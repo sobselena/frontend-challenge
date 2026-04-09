@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
-const stored = localStorage.getItem('breedIds');
+const stored = localStorage.getItem('cats');
 
 type Cat = {
   id: string;
