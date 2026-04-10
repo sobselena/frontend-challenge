@@ -1,0 +1,19 @@
+.container {
+  max-width: 144rem;
+  margin: 0 auto;
+
+  padding: 0rem 6.2rem 1.5rem 6.2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 22.5rem);
+  gap: clamp(2rem, 2vw, 4.8rem);
+  justify-items: start;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.empty {
+  text-align: center;
+}

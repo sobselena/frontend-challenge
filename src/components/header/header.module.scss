@@ -1,0 +1,48 @@
+.header {
+  position: sticky;
+  z-index: 20;
+  top: 0;
+
+  width: 100%;
+
+  background: var(--bg-primary);
+  box-shadow: var(--shadow-header);
+  margin-bottom: 5.2rem;
+}
+
+.nav {
+  display: flex;
+  align-items: stretch;
+
+  max-width: 144rem;
+  min-height: 6.4rem;
+  margin: 0 auto;
+  padding-left: 6.2rem;
+}
+
+.list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+}
+
+@media (width <= 86rem) {
+  .nav {
+    width: 100%;
+    min-height: 5.6rem;
+    padding-left: 0;
+  }
+
+  .list {
+    width: 100%;
+  }
+
+  .item {
+    flex: 1;
+  }
+}
