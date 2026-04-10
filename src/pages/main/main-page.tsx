@@ -4,6 +4,7 @@ import { useGetCatsImagesQuery } from '../../redux/api';
 import { Card } from '../main/components/card';
 import { CardsLayout } from '../../app/layouts/cards-layout';
 import styles from './main-page.module.scss';
+import { useFavoriteSelector } from '../../redux/selectors';
 
 export const MainPage = () => {
   const [page, setPage] = useState(0);
@@ -11,7 +12,7 @@ export const MainPage = () => {
   const { data = [], isFetching, isError } = useGetCatsImagesQuery({ page });
 
   const observer = useRef<IntersectionObserver | null>(null);
-
+  const favoriteCats = useFavoriteSelector().favorites;
   const lastElementRef = useCallback(
     (node: HTMLDivElement | null) => {
       if (isFetching || isError) return;
@@ -37,7 +38,14 @@ export const MainPage = () => {
         {data.map((cat, index) => {
           const isLast = index === data.length - 1;
 
-          const card = <Card key={cat.id} url={cat.url} id={cat.id} />;
+          const card = (
+            <Card
+              key={cat.id}
+              url={cat.url}
+              id={cat.id}
+              isFavorite={favoriteCats.some((favoriteCat) => favoriteCat.id === cat.id)}
+            />
+          );
 
           if (isLast) {
             return (
