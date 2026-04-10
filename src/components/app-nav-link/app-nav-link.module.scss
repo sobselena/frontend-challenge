@@ -1,0 +1,35 @@
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 2rem;
+
+  font-size: var(--font-sm);
+  line-height: var(--line-sm);
+  color: var(--text-inactive);
+  text-decoration: none;
+
+  transition:
+    background var(--transition),
+    color var(--transition);
+}
+
+.link:hover {
+  color: var(--text-white);
+  background: rgb(255 255 255 / 0.08);
+}
+
+.active {
+  color: var(--text-white);
+  background: var(--bg-primary-dark);
+}
+
+@media (width <= 86rem) {
+  .link {
+    width: 100%;
+    padding: 0 1rem;
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+  }
+}
