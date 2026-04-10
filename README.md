@@ -2,7 +2,7 @@
 
 ------------------------------------------------------------------------
 # Deploy 
-[Vercel](https://frontend-challenge-alpha-snowy.vercel.app/)
+[Vercel](https://frontend-challenge-pi-nine.vercel.app/)
 ------------------------------------------------------------------------
 ### Настройка переменных окружения
 
